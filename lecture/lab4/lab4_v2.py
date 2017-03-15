@@ -50,7 +50,7 @@ for i in range(n_episodes):
     while not done:
         #Choose action by e-greedy
         #Add random noise
-        action = rargmax(Q[state,:] + np.random.randn()/(i+1))
+        action = rargmax(Q[state,:] + np.random.randn(1, env.nA)/(i+1))
         
         #Get new state and reward from environment
         new_state, reward, done, info =env.step(action)
